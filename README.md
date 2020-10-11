@@ -1,5 +1,5 @@
 # Beamer - Template
-#### B.Tech - Seminar
+#### B.Tech - Seminar - Template
 
 ### How to use
 - Download this repo as a Zip to your computer.
