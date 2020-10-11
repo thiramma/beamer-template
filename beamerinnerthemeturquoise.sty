@@ -1,0 +1,77 @@
+\mode<presentation>
+
+%Complete File Theme
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \ifnum\thepage>1%
+   \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{thira-inner.png}
+  \else
+   \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{thira-cover.png}
+  \fi
+  \end{tikzpicture}
+}
+
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+   \vskip1.1cm%
+	\vskip2cm%
+    \begin{beamercolorbox}[wd=8cm,leftskip=0cm,sep=5pt,#1]{title page header}
+      \usebeamerfont{title}\centering \textbf{ \Monstserrat{\inserttitle}}%
+    \end{beamercolorbox}%
+    \vskip0.1cm%
+    \begin{beamercolorbox}[wd=8cm,leftskip=0.3cm,#1]{author}
+      \usebeamerfont{author} \centering \insertsubtitle%
+    \end{beamercolorbox}
+	\vskip0.8cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=6cm,#1]{date}
+		\usebeamerfont{date}
+		\tiny presented by,
+	\end{beamercolorbox}
+	\vskip0.3cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=6.3cm,#1]{date}
+		\usebeamerfont{date}
+		\insertauthor% 
+	\end{beamercolorbox}
+	\vskip0.3cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=6.3cm,#1]{date}
+		\usebeamerfont{date}
+		\regno% 
+	\end{beamercolorbox}
+	\vskip0.7cm%
+  \begin{beamercolorbox}[wd=12cm,leftskip=0.3cm,#1]{date}
+  	\usebeamerfont{date}\tiny \college % 
+  \end{beamercolorbox}
+}
+
+
+% Section page
+\defbeamertemplate*{section page}{texsx}[1][]
+{
+	\vskip0.5cm%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=1.1cm]{frametitle} 
+		\begin{tikzpicture}
+		\useasboundingbox[](0,0) rectangle(\the\paperwidth,1.2);
+		
+		\ifx\insertframetitle\@empty%
+		{\node[black,font=\tiny] at (9.3,1.6){\Monstserrat{\inserttitle}};%
+			\node[black,font=\tiny] at (12.3,1.7){\includegraphics[height=0.5cm]{\whitelogo}};%
+			\node[anchor= west, black,font=\large\centering] at (0.5,1.3){ \Monstserrat Section \insertsectionnumber};}%
+		\fi
+		
+		\end{tikzpicture}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[wd=12cm,leftskip=0.2cm,sep=5pt,#1]{title page header}
+		\textcolor{black}{\huge \textbf{\Monstserrat \insertsectionhead}}%
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=12cm,leftskip=0.3cm, sep=5pt,#1]{author}
+		\textcolor{black}{\small \Monstserrat \insertsection}%
+	\end{beamercolorbox}
+	\hspace*{0pt}\hfill \includegraphics[height=4.5cm]{\bluelogo}
+
+}
+                      
+\mode                    
+<all>
